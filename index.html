@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike Macuil - Ingeniería de Software y Finanzas Personales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset y base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #111111;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header / Hero */
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            text-align: center;
+            background-color: #f5f5f5;
+            color: #111;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        header .cta-btn {
+            padding: 0.8rem 2rem;
+            background-color: #111;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        header .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sección Sobre mí */
+        section {
+            padding: 5rem 0;
+        }
+
+        .about {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about img {
+            max-width: 400px;
+            border-radius: 12px;
+            flex: 1;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #111;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        /* Sección Servicios */
+        .services {
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #111;
+        }
+
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            flex: 1 1 300px;
+            max-width: 350px;
+            border: 1px solid #ddd;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            color: #111;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            list-style: disc inside;
+            color: #555;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .service-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Sección Contacto */
+        .contact {
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #111;
+        }
+
+        .contact a {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.8rem 2rem;
+            background-color: #111;
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sección Productos Digitales */
+        .digital-products {
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .digital-products h2 {
+            font-size: 2rem;
+            color: #111;
+            margin-bottom: 1rem;
+        }
+
+        .digital-products p {
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .product-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .product-cards .card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            flex: 1 1 300px;
+            max-width: 350px;
+            border: 1px solid #ddd;
+            position: relative;
+            text-align: left;
+        }
+
+        .product-cards .card h3 {
+            margin-bottom: 1rem;
+            color: #111;
+        }
+
+        .product-cards .card p {
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            background-color: #111;
+            color: #fff;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .product-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .coming-soon-banner {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #111;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #111;
+            color: #fff;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .about {
+                flex-direction: column;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero / Portada -->
+    <header>
+        <h1>Mike Macuil</h1>
+        <p>Donde las finanzas se encuentran con el código del futuro.</p>
+        <a href="#contact" class="cta-btn">Contáctame</a>
+    </header>
+
+    <!-- Sobre mí -->
+    <section class="about container">
+        <img src="media/image/profile.jpg" alt="Foto de Mike Macuil" class="profile">
+        <div class="about-text">
+            <h2>Sobre mí</h2>
+            <p>Soy Mike Macuil, ingeniero de software con 5 años de experiencia especializado en desarrollo móvil y
+                backend, con dominio en Flutter.</p>
+            <p>Apasionado por compartir conocimientos de finanzas personales que el público general desconoce, motivando
+                a nuevas personas a aprender sobre software y finanzas en LATAM.</p>
+        </div>
+    </section>
+
+    <!-- Lo que hago -->
+    <section class="services">
+        <div class="container">
+            <h2>Lo que hago</h2>
+            <div class="service-cards">
+                <!-- Desarrollo de Apps Móviles -->
+                <div class="card">
+                    <img src="media/image/desarrollo_mobil.png" alt="Desarrollo de Apps Móviles"
+                        style="width:100%; height:200px; object-fit: cover; border-radius:12px; margin-bottom:1rem;">
+                    <h3>Desarrollo de Apps Móviles</h3>
+                    <p>Tengo amplia experiencia en el desarrollo de aplicaciones móviles usando
+                        <strong>Flutter</strong>, especialmente enfocadas en Android. Domino patrones de arquitectura y
+                        buenas prácticas que permiten construir apps escalables y mantenibles.
+                    </p>
+                    <ul>
+                        <li>Experto en <strong>Flutter BLoC</strong> para gestión de estado</li>
+                        <li>Implementación de <strong>Flutter Test</strong> y pruebas unitarias</li>
+                        <li>Inyección de dependencias y <strong>Clean Code</strong></li>
+                        <li>Optimización de rendimiento y buenas prácticas en UI/UX</li>
+                    </ul>
+                </div>
+
+
+                <!-- Finanzas Personales -->
+                <div class="card">
+                    <img src="media/image/personales.webp" alt="Finanzas Personales"
+                        style="width:100%; height:200px; object-fit: cover; border-radius:12px; margin-bottom:1rem;">
+                    <h3>Finanzas Personales</h3>
+                    <p>Comparto conocimientos prácticos sobre finanzas personales en México, ayudando a entender mejor
+                        la economía, las inversiones y el manejo del dinero en la vida diaria.</p>
+                    <ul>
+                        <li>Inversiones de renta fija en México: <strong>CETES, SOFIPOs y pagarés bancarios</strong>
+                        </li>
+                        <li>Educación sobre inflación y su impacto en tus finanzas</li>
+                        <li>Manejo responsable de tarjetas de crédito y su historial financiero</li>
+                        <li>Explicación de empresas financieras y su rol en el crédito y ahorro en México</li>
+                        <li>Consejos prácticos para mejorar la salud financiera personal</li>
+                    </ul>
+                </div>
+
+
+                <!-- Educación y Capacitación -->
+                <div class="card">
+                    <img src="media/image/capacitacion.webp" alt="Educación y Capacitación"
+                        style="width:100%; height:200px; object-fit: cover; border-radius:12px; margin-bottom:1rem;">
+                    <h3>Educación y Capacitación</h3>
+                    <p>Ofrezco recursos educativos y cursos prácticos para quienes desean aprender desarrollo de
+                        software con Flutter y mejorar sus finanzas personales, de forma accesible y estructurada.</p>
+                    <ul>
+                        <li>Curso básico de <strong>Flutter</strong> para principiantes</li>
+                        <li>Curso de <strong>Clean Code</strong> aplicado a Flutter</li>
+                        <li>Curso de <strong>Inyección de Dependencias</strong> en Flutter</li>
+                        <li>Curso de <strong>Programación básica con Dart</strong></li>
+                        <li>Manual en PDF complementario para cada curso</li>
+                        <li>Curso de <strong>Finanzas personales básicas</strong> para mejorar la educación financiera
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Digitales -->
+    <section class="digital-products" id="digital-products">
+        <div class="container">
+            <h2>Productos Digitales</h2>
+            <p>Estoy trabajando en productos digitales que te ayudarán a aprender y mejorar tus habilidades en
+                desarrollo de software y finanzas personales.</p>
+
+            <!-- Leyenda de "Próximamente" -->
+            <div class="coming-soon-banner">
+                <span>Próximamente</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="links"
+                style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem;">
+                <a href="https://www.facebook.com/MikeMacuil" target="_blank"
+                    style="display: flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background-color: #111; color: #fff; border-radius: 8px; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" width="20"
+                        alt="Facebook" style="filter: invert(100%);"> Facebook
+                </a>
+                <a href="https://www.youtube.com/@mike.macuil" target="_blank"
+                    style="display: flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background-color: #111; color: #fff; border-radius: 8px; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" width="20"
+                        alt="YouTube" style="filter: invert(100%);"> YouTube
+                </a>
+                <a href="https://www.tiktok.com/@mike.macuil" target="_blank"
+                    style="display: flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background-color: #111; color: #fff; border-radius: 8px; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" width="20"
+                        alt="TikTok" style="filter: invert(100%);"> TikTok
+                </a>
+                <a href="https://www.instagram.com/mikemacuil/" target="_blank"
+                    style="display: flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background-color: #111; color: #fff; border-radius: 8px; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" width="20"
+                        alt="Instagram" style="filter: invert(100%);"> Instagram
+                </a>
+                <a href="https://github.com/MiguelMacul" target="_blank"
+                    style="display: flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background-color: #111; color: #fff; border-radius: 8px; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" width="20"
+                        alt="GitHub" style="filter: invert(100%);"> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Mike Macuil. Todos los derechos reservados.
+    </footer>
+
+</body>
+
+</html>
