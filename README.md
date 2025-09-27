@@ -31,5 +31,5 @@ Esta landing page sirve como **presentación personal** de Mike Macuil, mostrand
 - **YouTube:** [Mike Macuil](https://www.youtube.com/@mike.macuil)  
 - **TikTok:** [Mike Macuil](https://www.tiktok.com/@mike.macuil)  
 - **Instagram:** [MikeMacuil](https://www.instagram.com/mikemacuil/)  
-- **GitHub:** [MiguelMacul](https://github.com/MiguelMacul)  
+- **GitHub:** [MikeMacuil](https://github.com/MikeMacuil)  
 - **Web personal:** Próximamente
